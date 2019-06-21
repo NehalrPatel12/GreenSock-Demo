@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,900" rel="stylesheet">
+    <title>Greensock Demo</title>
+    <style>
+        body{
+            font-size: 15px;
+        }
+        body, h1, h2, h3, h4, h5, h6, .Btn{
+            font-family: 'Work Sans', sans-serif; 
+        }
+        .Main{
+            position: relative;
+            width: 728px;
+            height: 90px;
+            background-color: #55a518;
+            align-content: center;
+        }
+        .Logo{
+            position: relative;
+            display: inline-block;
+            width: 78px;
+            height: 78px;
+            margin: 5px 20px 0;
+        }
+        h1{
+            position: relative;
+            display: inline-block;
+            width: 180px;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            bottom: 19px;
+        }
+        h1 span, .GrnsLearntxt{
+            color: white;
+        }
+        .GrnsLearntxt{
+            position: relative;
+            display: inline-block;
+            width: 230px;
+            bottom: 23px;
+        }
+        .GArrow{
+            position: absolute;
+            right: 160px;
+            top: 50px;
+            z-index: 9999;
+        }
+        .Btn {
+            position: relative;
+            display:inline-block;
+            background-color: #fff;
+            text-transform: uppercase;
+            font-weight: 500;
+            line-height:40px;
+            color:#000;
+            border-radius:5px;
+            padding:0 25px;
+            border:0;
+            bottom: 33px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        .Btn:hover{
+
+        }
+    </style>
+  </head>
+  <body>
+      <div class="Main">
+          <img src="img/logo-greensock.png" class="Logo" />
+          <h1>Green<span>sock</span> Workshop</h1>
+          <span class="GrnsLearntxt">Want to Learn GreenSock From Scratch?</span>
+          <img src="img/arrow-greensock.png" class="GArrow">
+          <button class="Btn">Yes Let's Go</button>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+      <script>
+        TL1 = new TimelineMax({});
+        TL1
+        .from('.Logo', 1, {opacity:0, scale:.4})
+        .from('h1', 1, {scale:1, ease:Bounce.easeOut, y: -90})
+        .from('.GrnsLearntxt', 1, {opacity:0, scale:0, transformOrigin:"0% 50% -50%", ease:Back.easeOut})
+        .from('.Btn', 2, {opacity:0, scaleX:.9, scaleY:.9, ease:SteppedEase.config(12)})
+        .from('.GArrow', 1, {opacity:0, scale:1.5, ease: Power2.easeOut})
+      </script>
+  </body>
+</html>
